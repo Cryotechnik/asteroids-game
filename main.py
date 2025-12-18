@@ -1,8 +1,9 @@
 import pygame # type: ignore
+import sys
 
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
-from logger import log_state
+from logger import log_state, log_event
 
 from player import Player
 
@@ -43,6 +44,11 @@ def main():
             drawable_object.draw(screen)
         pygame.display.flip()
         dt = timer.tick(60) / 1000
+        for asteroid in asteroids:
+            if player.collides_with(asteroid):
+                log_event("player_hit")
+                print("Game over!")
+                sys.exit()
 
 if __name__ == "__main__":
     main()
