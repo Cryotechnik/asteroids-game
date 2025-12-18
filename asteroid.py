@@ -1,8 +1,8 @@
 import pygame # type: ignore
 import random
 from logger import log_event
-from constants import LINE_WIDTH, ASTEROID_MIN_RADIUS, ASTEROID_KINDS, ASTEROID_SPAWN_RATE_SECONDS, ASTEROID_MAX_RADIUS
 from circleshape import CircleShape
+from constants import LINE_WIDTH, ASTEROID_MIN_RADIUS
 
 class Asteroid(CircleShape):
     def __init__(self, x, y, radius):
